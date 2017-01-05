@@ -1,4 +1,4 @@
-var player = require('play-sound')
+var player = require('play-sound')(opts = {})
 var greenBean = require('green-bean')
 const buzzers = {
   1: 'airplane_chime_x',
@@ -6,6 +6,9 @@ const buzzers = {
 }
 greenBean.connect('laundry', (laundry) => {
   laundry.endOfCycle.subscribe(() => {
-    player.play()
+    player.play(buzzers[1], (err) => {
+      console.err(err)
+    }
+    )
   })
 })

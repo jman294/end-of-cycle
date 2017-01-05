@@ -1,0 +1,30 @@
+{
+  "name": "end-of-cycle",
+  "version": "1.0.0",
+  "description": "Makes washers alert on the end of a cycle",
+  "main": "buzzer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jman294/end-of-cycle.git"
+  },
+  "keywords": [
+    "washer",
+    "buzzer",
+    "green-bean",
+    "green",
+    "bean"
+  ],
+  "author": "Jack DuPlessis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jman294/end-of-cycle/issues"
+  },
+  "homepage": "https://github.com/jman294/end-of-cycle#readme",
+  "dependencies": {
+    "green-bean": "^0.1.1",
+    "play-sound": "^1.1.1"
+  }
+}
