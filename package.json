@@ -25,6 +25,8 @@
   "homepage": "https://github.com/jman294/end-of-cycle#readme",
   "dependencies": {
     "green-bean": "^0.1.1",
-    "play-sound": "^1.1.1"
+    "node-uname": "^1.0.1",
+    "play-sound": "^1.1.1",
+    "rpi-gpio": "^0.7.0"
   }
 }
