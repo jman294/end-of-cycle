@@ -38,7 +38,8 @@ if (gotPi) {
    gpio.setup(7, gpio.DIR_IN, gpio.EDGE_BOTH)
 }
 
-var index = 1
+var soundPlayCount = 10
+var soundWaitCount = 5
 
 console.log('test')
 greenBean.connect('laundry', function(laundry) {
@@ -48,18 +49,21 @@ greenBean.connect('laundry', function(laundry) {
    function requestCycleStatus(callback) {
       laundry.endOfCycle.read(function (endOfCycle) {
         console.log('end of cycle: ', + endOfCycle)
-         if (endOfCycle && beep) {
-           playBuzzer()
-           beep = false
-         } else {
-           beep = true 
-         }
+        if (endOfCycle && soundPlayCount > 0) {
+          soundPlayCount--
+          callback()
+        }
+        if (!endOfCycle) {
+          setTimeout(function () {
+          soundPlayCount = 10
+          }, 1000)
+        }
       })
    }
 
    setInterval(function() {
       console.log("Requesting cycle status.")
-      requestCycleStatus()   
+      requestCycleStatus(playBuzzer)   
    }, 1000)
 })
 
