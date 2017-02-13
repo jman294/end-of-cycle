@@ -6,8 +6,7 @@ var soundCount = 5
 
 function requestCycleStatus(callback) {
   console.log('end of cycle: ', + endOfCycle)
-  if (endOfCycle && soundCount > 0) {
-    soundCount--
+  if (endOfCycle) {
     callback()
   }
   if (!endOfCycle) {
