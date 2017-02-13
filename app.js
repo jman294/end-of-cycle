@@ -64,6 +64,5 @@ greenBean.connect('laundry', function(laundry) {
 })
 
 function playBuzzer () {
-  player.play('buzzers/chime.wav')
+  player.play('buzzers/chime_60.wav')
 }
-
